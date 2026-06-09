@@ -59,16 +59,16 @@ export default function FotoalbumPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Featured large photo */}
-          <div className="relative aspect-[16/7] rounded-2xl overflow-hidden mb-4 shadow-xl">
+          <div className="relative w-full mb-4 shadow-xl rounded-2xl overflow-hidden bg-black">
             <Image
               src={allPhotos[0].src}
               alt={allPhotos[0].alt}
-              fill
+              width={1920}
+              height={1080}
               sizes="100vw"
-              className="object-cover"
+              className="w-full h-auto block"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
           </div>
 
           {/* Grid of remaining photos */}
