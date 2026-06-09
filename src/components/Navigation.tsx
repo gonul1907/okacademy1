@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/trainers", label: "Trainers" },
   { href: "/trainingen", label: "Trainingen" },
   { href: "/tarieven", label: "Tarieven" },
+  { href: "/kleding", label: "Kleding" },
   { href: "/contact", label: "Contact" },
   { href: "/fotoalbum", label: "Fotoalbum" },
 ];
