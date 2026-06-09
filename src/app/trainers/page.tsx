@@ -63,7 +63,7 @@ const trainers = [
     role: "Trainer",
     diploma: "VC1 (komend seizoen)",
     club: "PVCV 19-1 | Selectietrainer O11 & O9",
-    image: "",
+    image: "/thijs-holthaus.jpg",
     bio: "Thijs Holthaus (17) heeft voetbal als zijn grootste passie. Hij speelt in de 19-1 van PVCV en heeft jaren op divisieniveau gevoetbald. Door zijn ervaring met gediplomeerde trainers heeft hij een brede voetbalkennis opgebouwd die hij inzet bij het opleiden van talenten bij OKAcademy. Komend jaar behaalt hij zijn eerste trainerslicentie (VC1). Naast zijn rol bij OKAcademy is hij selectietrainer van de O11 en O9 bij PVCV.",
     highlights: [
       "Jaren ervaring op divisieniveau bij PVCV",
