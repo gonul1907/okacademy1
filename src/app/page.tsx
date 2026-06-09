@@ -140,7 +140,7 @@ export default function HomePage() {
 
             <div className="flex items-center gap-8 mt-12 pt-12 border-t border-gray-800/60">
               <div>
-                <div className="text-3xl font-bold text-white">3</div>
+                <div className="text-3xl font-bold text-white">4</div>
                 <div className="text-sm text-gray-500 mt-0.5">gecertificeerde trainers</div>
               </div>
               <div className="w-px h-12 bg-gray-800" />
