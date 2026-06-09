@@ -58,6 +58,22 @@ const trainers = [
     ],
     initials: "YP",
   },
+  {
+    name: "Thijs Holthaus",
+    role: "Trainer",
+    diploma: "VC1 (komend seizoen)",
+    club: "PVCV 19-1 | Selectietrainer O11 & O9",
+    image: "",
+    bio: "Thijs Holthaus (17) heeft voetbal als zijn grootste passie. Hij speelt in de 19-1 van PVCV en heeft jaren op divisieniveau gevoetbald. Door zijn ervaring met gediplomeerde trainers heeft hij een brede voetbalkennis opgebouwd die hij inzet bij het opleiden van talenten bij OKAcademy. Komend jaar behaalt hij zijn eerste trainerslicentie (VC1). Naast zijn rol bij OKAcademy is hij selectietrainer van de O11 en O9 bij PVCV.",
+    highlights: [
+      "Jaren ervaring op divisieniveau bij PVCV",
+      "Selectietrainer O11 en O9 bij PVCV",
+      "Behaalt VC1-trainerslicentie komend seizoen",
+      "Focus op individuele ontwikkeling per speler",
+      "Combineert voetbalkennis met passie en plezier",
+    ],
+    initials: "TH",
+  },
 ];
 
 export default function TrainersPage() {
@@ -94,14 +110,20 @@ export default function TrainersPage() {
               >
                 {/* Image */}
                 <div className={`relative ${i % 2 === 1 ? "lg:col-start-2" : ""}`}>
-                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
-                    <Image
-                      src={trainer.image}
-                      alt={`Trainer ${trainer.name} – OKAcademy`}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover object-center"
-                    />
+                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl bg-gray-100">
+                    {trainer.image ? (
+                      <Image
+                        src={trainer.image}
+                        alt={`Trainer ${trainer.name} – OKAcademy`}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover object-center"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center bg-[#1a1a1a]">
+                        <span className="text-7xl font-bold text-white/20">{trainer.initials}</span>
+                      </div>
+                    )}
                   </div>
                   <div className="absolute top-4 left-4 px-3 py-1.5 bg-[#D62626] text-white text-xs font-bold rounded-lg">
                     {trainer.diploma}
