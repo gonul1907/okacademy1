@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle, ShoppingBag } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Kleding – Officiële OK Academy tenue | OKAcademy",
@@ -9,11 +10,11 @@ export const metadata: Metadata = {
 };
 
 const losse = [
-  { naam: "Shirt", prijs: "€29,95" },
-  { naam: "Broekje", prijs: "€24,95" },
-  { naam: "Lange broek", prijs: "€40,95" },
-  { naam: "Sokken", prijs: "€12,95" },
-  { naam: "Trui", prijs: "€44,95" },
+  { naam: "Shirt", prijs: "€29,95", img: "/shirt.jpeg" },
+  { naam: "Broekje", prijs: "€24,95", img: "/korte-broek.jpeg" },
+  { naam: "Lange broek", prijs: "€40,95", img: "/broek.jpeg" },
+  { naam: "Sokken", prijs: "€12,95", img: "/sokken.jpeg" },
+  { naam: "Trui", prijs: "€44,95", img: "/vest.jpeg" },
 ];
 
 const pakketten = [
@@ -76,13 +77,21 @@ export default function KledingPage() {
             {losse.map((artikel) => (
               <div
                 key={artikel.naam}
-                className="flex flex-col items-center justify-center gap-3 p-6 bg-gray-50 rounded-2xl border border-gray-200 hover:border-[#D62626] transition-colors group"
+                className="flex flex-col items-center gap-3 bg-gray-50 rounded-2xl border border-gray-200 hover:border-[#D62626] transition-colors group overflow-hidden"
               >
-                <div className="w-12 h-12 rounded-full bg-[#D62626]/10 flex items-center justify-center">
-                  <ShoppingBag size={20} className="text-[#D62626]" />
+                <div className="relative w-full aspect-square">
+                  <Image
+                    src={artikel.img}
+                    alt={artikel.naam}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                    className="object-cover"
+                  />
                 </div>
-                <span className="text-sm font-semibold text-gray-900 text-center">{artikel.naam}</span>
-                <span className="text-xl font-bold text-gray-900">{artikel.prijs}</span>
+                <div className="px-4 pb-5 text-center">
+                  <span className="text-sm font-semibold text-gray-900 block">{artikel.naam}</span>
+                  <span className="text-xl font-bold text-gray-900">{artikel.prijs}</span>
+                </div>
               </div>
             ))}
           </div>
