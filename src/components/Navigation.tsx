@@ -42,15 +42,15 @@ export default function Navigation() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 flex items-center">
             <Image
               src="https://primary.jwwb.nl/public/m/z/t/temp-padguskjejeujijcvqit/scherm-afbeelding-2026-03-17-om-11-10-19-high.png"
               alt="OKAcademy"
-              width={130}
-              height={52}
-              className="h-10 w-auto object-contain"
+              width={170}
+              height={68}
+              className="h-12 lg:h-14 w-auto object-contain"
               priority
             />
           </Link>

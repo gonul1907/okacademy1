@@ -69,9 +69,9 @@ export default function Footer() {
             <Image
               src="https://primary.jwwb.nl/public/m/z/t/temp-padguskjejeujijcvqit/scherm-afbeelding-2026-03-17-om-11-10-19-high.png"
               alt="OKAcademy"
-              width={140}
-              height={56}
-              className="h-12 w-auto object-contain mb-5"
+              width={180}
+              height={72}
+              className="h-14 w-auto object-contain mb-5"
             />
             <p className="text-gray-400 leading-relaxed max-w-sm mb-6 text-sm">
               OKAcademy helpt jonge voetballers hun volledige potentieel te bereiken.
