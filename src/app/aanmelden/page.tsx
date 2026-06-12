@@ -37,13 +37,22 @@ export default function AanmeldenPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const res = await fetch("/api/aanmelden", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Verzenden mislukt");
       setSubmitted(true);
-    }, 1200);
+    } catch {
+      alert("Er is iets misgegaan. Probeer het opnieuw of neem direct contact op.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

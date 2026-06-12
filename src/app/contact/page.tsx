@@ -49,13 +49,22 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Verzenden mislukt");
       setSubmitted(true);
-    }, 1000);
+    } catch {
+      alert("Er is iets misgegaan. Probeer het opnieuw of neem direct contact op.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
